@@ -13,7 +13,7 @@ const PORT = 3000;
 const elixirs = require("./routes/elixirs.js");
 const ingredients = require("./routes/ingredients");
 const spells = require("./routes/spells")
-//const wizards = require('./routes/wizards');
+const wizards = require('./routes/wizards');
 
 
 
@@ -32,6 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/elixirs", elixirs);
 app.use("/ingredients", ingredients);
 app.use("/spells", spells);
+app.use("/wizards", wizards);
 
 //ROUTES
 
