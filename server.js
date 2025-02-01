@@ -3,10 +3,16 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 //import models
-const Ingredient = require("./models/ingredient.js");
+//const Ingredient = require("./models/ingredient.js");
 
 const app = express();
 const PORT = 3000;
+
+
+// route imports
+//const elixirs = require("./routes/elixirs");
+const ingredients = require("./routes/ingredients");
+//const wizards = require('./routes/wizards');
 
 
 
@@ -20,18 +26,18 @@ mongoose.connection.on("connected", ()=> {
 });
 
 
-
+app.use("/ingredients", ingredients);
 
 app.get("/", (req, res) => {
     res.send("HOME");
 }); 
 
 
-// Get all ingredients
-app.get("/ingredients", async (req, res) => {      
-    let ingredients = await Ingredient.find({});  
-    res.send(ingredients);
-});
+// // Get all ingredients
+// app.get("/ingredients", async (req, res) => {      
+//     let ingredients = await Ingredient.find({});  
+//     res.send(ingredients);
+// });
 
 
 app.listen(PORT, (req, res) => {
