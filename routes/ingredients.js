@@ -9,8 +9,8 @@ router
     .route("/") 
 
     .get(async (req, res) => {
-        let ingredients = await Ingredient.find({});
-        res.send(ingredients);
+        let allIngredients = await Ingredient.find({});
+        res.send(allIngredients);
     });
     // .post((req, res, next) => {
     //     //if  the body of the post request contain name
@@ -40,10 +40,13 @@ router
 
 router
     .route("/:id")
-    .get((req, res) => {
-        const oneI = Ingredient.findOne( { $regex: req.params.id});
-        if (ingredient) res.send(oneI)
-        else res.send("Not found");// next();//call error handling
+    .get(async (req, res) => {
+        try {
+            let result = await Ingredient.findById(req.params.id);
+            res.send(result);
+          } catch {
+            res.send("Invalid ID").status(400);
+          }
     });
     // .patch((req, res, next) => {
     //     const ingredient = ingredients.find((ingr, i) => {

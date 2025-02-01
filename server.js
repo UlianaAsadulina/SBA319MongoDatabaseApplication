@@ -10,8 +10,9 @@ const PORT = 3000;
 
 
 // route imports
-//const elixirs = require("./routes/elixirs");
+const elixirs = require("./routes/elixirs.js");
 const ingredients = require("./routes/ingredients");
+const spells = require("./routes/spells")
 //const wizards = require('./routes/wizards');
 
 
@@ -25,8 +26,14 @@ mongoose.connection.on("connected", ()=> {
     console.log(`Connected to MongoDB ${mongoose.connection.name}`);
 });
 
+app.use(express.urlencoded({ extended: false }));
 
+//router
+app.use("/elixirs", elixirs);
 app.use("/ingredients", ingredients);
+app.use("/spells", spells);
+
+//ROUTES
 
 app.get("/", (req, res) => {
     res.send("HOME");
@@ -38,6 +45,21 @@ app.get("/", (req, res) => {
 //     let ingredients = await Ingredient.find({});  
 //     res.send(ingredients);
 // });
+
+
+
+// 404 Middleware
+app.use((req, res) => {
+    res.status(404);
+    res.json({ error: "Resource Not Found" });
+});
+
+
+// Another error-handling middleware
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({ error: err.message });
+});
 
 
 app.listen(PORT, (req, res) => {
