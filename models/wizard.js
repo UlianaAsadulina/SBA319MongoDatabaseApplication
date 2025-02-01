@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const wizardSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
-    elixirs: Array,
+    elixirs: [{ 
+        //id: String,
+        name: String}],
 
 
 });

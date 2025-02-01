@@ -19,10 +19,18 @@ const elixirSchema = new mongoose.Schema ({
             "One Of A Kind"
         ],
         default: "Unknown",
+        message: "{VALUE} is not a valid level of difficulty",
+        required: true,
 
     },
-    ingredients: Array,
-    inventors: Array,
+    ingredients: [{ 
+        // id: String, 
+        name: String,
+        amount: Number }],
+    inventors: [ {
+        id: String,
+        firstName: String,
+        lastName: String}],
 
 });
 

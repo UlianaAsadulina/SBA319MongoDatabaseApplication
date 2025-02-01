@@ -11,13 +11,29 @@
     <h1>All Ingredients</h1>
     <ol>
         <% ingredients.forEach(ingredient=> { %>
-            <li><a href="/ingredients/<%= ingredient._id %>">
+            <li>
+                <a href="/ingredients/<%= ingredient._id %>" width="500px" >
                     <%= ingredient.name %>
-                </a></li>
+                </a>
+                <a href="/ingredients/<%= ingredient._id %>/edit">
+                    <button type="button">Edit</button>
+                </a>
+                <a href="/ingredients/<%= ingredient._id %>/delete">
+                    <button type="button">Delete</button>
+                </a>               
+            
+            </li>
             <% }); %>
     </ol>
 
-    <a href="/ingredients/new">Add New Elixir Ingredient</a>
+    <h3>Add New Elixir Ingredient</h3>
+    <form action="/ingredients" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <button type="submit">Add Ingredient</button>
+    </form>
+
+    <a href="/"> Go Home</a>
 
 </body>
 

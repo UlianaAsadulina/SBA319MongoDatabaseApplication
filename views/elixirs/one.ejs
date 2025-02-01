@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= elixir.name %> Show Page
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= elixir.name %>
+    </h1>
+    <p> 
+        Effect: <%= elixir.effect %> <br> 
+        Side effects: <%= elixir.sideEffects %> <br>
+        Characteristics: <%= elixir.characteristics %> <br>
+        Level of difficulty: <%= elixir.difficulty %> <br>
+        Ingredients: <br>
+        Elexir's Inventors: <br>
+    </p>
+
+    
+    
+
+
+
+
+    <form action="/elixirs/<%=elixir._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= elixir.name %></button>
+    </form>
+    
+    <a href="/elixirs/<%= elixir._id %>/edit">
+        <button type="button">Edit <%= elixir.name %></button>
+    </a>
+    <br> <br>
+    <a href="/elixirs/">Back to Books</a>
+
+</body>
+
+</html>

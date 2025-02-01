@@ -12,7 +12,7 @@
     <ul style="list-style: none;">
         <% wizards.forEach(wizard=> { %>
             <li><a href="/wizards/<%= wizard._id %>">
-                    <%= wizard.firstName + wizard.lastName %>
+                    <%= wizard.firstName+' '+wizard.lastName %>
                 </a></li>
             <% }); %>
     </ul>

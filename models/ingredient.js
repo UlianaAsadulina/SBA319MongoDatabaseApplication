@@ -7,6 +7,8 @@ const ingredientSchema = new mongoose.Schema({
     },
     
 });
+//create index
+ingredientSchema.index({ name: 1 });
 //create model
 const Ingredient = mongoose.model("Ingredient", ingredientSchema); 
 

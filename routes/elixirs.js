@@ -15,11 +15,13 @@ router
     .route("/:id")
     .get(async (req, res) => {
         try {
-            let result = await Elixir.findById(req.params.id);
-            res.send(result);
+            let oneElixir = await Elixir.findById(req.params.id);
+            res.render("elixirs/one.ejs", { elixir: oneElixir});
         } catch {
             res.send("Invalid ID").status(400);
         }
     });    
+
+
 
 module.exports = router;    

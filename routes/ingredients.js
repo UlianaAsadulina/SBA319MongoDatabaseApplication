@@ -12,9 +12,21 @@ router
         let allIngredients = await Ingredient.find();
         res.render("ingredients/index.ejs", { ingredients: allIngredients })
         
+    })
+
+    .post(async (req, res) => {    
+        await Ingredient.create(req.body);
+        console.log("Ingredient added");
+        res.redirect("/ingredients");
+        
     });
     
-
+// router
+//     .route("/new")    
+//     .get( (req,res) => {
+//         res.render("ingredients/new.ejs");
+//     });
+    
 router
     .route("/:id")
     .get(async (req, res) => {
@@ -25,6 +37,7 @@ router
             res.send("Invalid ID").status(400);
         }
     });
-    
+
+
 
 module.exports = router;
