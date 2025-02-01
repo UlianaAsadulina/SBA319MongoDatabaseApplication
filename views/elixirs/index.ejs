@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elixirs</title>
+</head>
+
+<body>
+    <h1>All Elixirs</h1>
+    <ol>
+        <% elixirs.forEach(elixir=> { %>
+            <li><a href="/elixirs/<%= elixir._id %>">
+                    <%= elixir.name %>
+                </a></li>
+            <% }); %>
+    </ol>
+
+    <a href="/elixirs/new">Add New Elixir</a>
+
+</body>
+
+</html>

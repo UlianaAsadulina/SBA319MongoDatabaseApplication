@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI);
 //message then terminal starts
 mongoose.connection.on("connected", ()=> {
     //name of database what connected
-    console.log(`Connected to MongoDB ${mongoose.connection.name}`);
+    console.log(`Connected to DB ${mongoose.connection.name}`);
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -37,7 +37,8 @@ app.use("/wizards", wizards);
 //ROUTES
 
 app.get("/", (req, res) => {
-    res.send("HOME");
+    // res.send("HOME");
+    res.render("home.ejs");
 }); 
 
 

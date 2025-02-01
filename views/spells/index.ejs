@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Spells</title>
+</head>
+
+<body>
+    <h1>All Kinds of Magic Spells</h1>
+    <ol>
+        <% spells.forEach(spell=> { %>
+            <li><a href="/spells/<%= spell._id %>">
+                    <%= spell.name %>
+                </a></li>
+            <% }); %>
+    </ol>
+
+    <a href="/spells/new">Add New Spell</a>
+
+</body>
+
+</html>
