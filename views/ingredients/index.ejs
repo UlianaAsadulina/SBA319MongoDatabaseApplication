@@ -11,8 +11,8 @@
     <h1>All Ingredients</h1>
     <ol>
         <% ingredients.forEach(ingredient=> { %>
-            <li>
-                <a href="/ingredients/<%= ingredient._id %>" width="500px" >
+            <li style="padding-bottom: 10px;">
+                <a href="/ingredients/<%= ingredient._id %>" width="1000px" >
                     <%= ingredient.name %>
                 </a>
                 <a href="/ingredients/<%= ingredient._id %>/edit">
@@ -32,8 +32,8 @@
         <input type="text" name="name" id="name" />
         <button type="submit">Add Ingredient</button>
     </form>
-
-    <a href="/"> Go Home</a>
+    <br><br>
+    <a href="/"> Go back Home</a>
 
 </body>
 

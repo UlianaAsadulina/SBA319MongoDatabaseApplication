@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit spell</title>
+</head>
+
+<body>
+    <!-- update the header -->
+    <h1>Edit <%= spell.name %>
+    </h1>
+
+    <form action="/spells/<%=spell._id%>?_method=PUT" method="POST">      
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= spell.name %>" />
+        <br>
+        <label for="incantation">Incantation:</label>
+        <input type="text" name="incantation" id="incantation" value="<%= spell.incantation %>" />
+        <br>
+        <label for="type">Choose a type of spell:</label>
+        <select name="type" id="type">
+                <option value="<%= spell.type %>" selected> <%= spell.type %> </option>
+                <option value="None">None</option>
+                <option value="Charm">Charm</option>
+                <option value="Counter Charm">Counter Charm</option>
+                <option value="Dark Charm">Dark Charm</option>
+                <option value="Spell">Spell</option>
+                <option value="Counter Spell">Counter Spell</option>
+                <option value="Healing Spell">Healing Spell</option>
+                <option value="Curse">Curse</option>
+                <option value="Jinx">Jinx</option>
+                <option value="Counter Jinx">Counter Jinx</option>
+                <option value="Conjuration">Conjuration</option>
+                <option value="Transfiguration">Transfiguration</option>
+                <option value="Untransfiguration">Untransfiguration</option>
+                <option value="Magical Transportation">Magical Transportation</option>
+                <option value="Hex">Hex</option>
+                <option value="Dark Arts">Dark Arts</option>
+                <option value="Vanishment">Vanishment</option>
+                <option value="Binding Magical Contract">Binding Magical Contract</option>
+        </select>
+
+        <label for="canBeVerbal">  Verbal:</label>
+        <input type="checkbox" name="canBeVerbal" id="canBeVerbal" 
+            <% if (spell.canBeVerbal) { %>
+                checked
+            <% } %> 
+        />
+        <br>        
+        <label for="light">Color of light:</label>        
+        <input type="text" name="light" id="light" value="<%= spell.light %>" />
+        <br>
+        <label for="creator"> Autor/Creator:</label>
+        <input type="text" name="creator" id="creator" value="<%= spell.creator%> " />             
+        <br>    
+        <button type="submit">Update spell</button>
+
+        
+        
+    </form>
+
+    <a href="/spells">Back to spells</a>
+</body>
+
+</html>

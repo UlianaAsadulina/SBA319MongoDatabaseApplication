@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= spell.name %> Show Page
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= spell.name %>
+    </h1>
+    <h3>
+        Must be pronounced <bold> " <%= spell.incantation%> "</bold>
+
+    </h3>
+    <p> 
+        Effect: 
+        <%= spell.effect %> 
+        <br> 
+        Type of spell: 
+        <%= spell.type %>  
+        <br>
+        Verbal: 
+        <% if (spell.canBeVerbal) { %>
+            YES
+        <% } else { %>
+            NO
+        <% } %>
+        <br>
+        Color of light: 
+        <%= spell.light%>
+        <br>
+        Autor/creator: 
+        <%= spell.creator%> 
+    </p>
+    
+    <a href="/spells/<%= spell._id %>/edit">
+        <button type="button">Edit <%= spell.name %></button>
+    </a>
+    <form action="/spells/<%=spell._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= spell.name %></button>
+    </form>
+    
+    <br> <br>
+    <a href="/spells/">Back to All spells</a>
+
+</body>
+
+</html>

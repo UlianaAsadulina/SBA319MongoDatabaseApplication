@@ -21,11 +21,7 @@ router
         
     });
     
-// router
-//     .route("/new")    
-//     .get( (req,res) => {
-//         res.render("ingredients/new.ejs");
-//     });
+
     
 router
     .route("/:id")

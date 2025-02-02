@@ -27,16 +27,16 @@
 
 
 
-
+ <a href="/elixirs/<%= elixir._id %>/edit">
+        <button type="button">Edit <%= elixir.name %></button>
+    </a>
     <form action="/elixirs/<%=elixir._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= elixir.name %></button>
     </form>
     
-    <a href="/elixirs/<%= elixir._id %>/edit">
-        <button type="button">Edit <%= elixir.name %></button>
-    </a>
+   
     <br> <br>
-    <a href="/elixirs/">Back to Books</a>
+    <a href="/elixirs/">Back to Elexirs page</a>
 
 </body>
 

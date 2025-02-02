@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require("method-override");
 
 require('dotenv').config();
 //import models
@@ -27,14 +28,15 @@ mongoose.connection.on("connected", ()=> {
 });
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method")); 
 
-//router
+//routes from router
 app.use("/elixirs", elixirs);
 app.use("/ingredients", ingredients);
 app.use("/spells", spells);
 app.use("/wizards", wizards);
 
-//ROUTES
+//home ROUTE
 
 app.get("/", (req, res) => {
     // res.send("HOME");

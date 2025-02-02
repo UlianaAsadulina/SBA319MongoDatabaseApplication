@@ -8,7 +8,7 @@ const spellSchema = new mongoose.Schema({
     incantation:String,
     effect: String,
     canBeVerbal: Boolean,
-    spellType: {
+    type: {
         type: String,
         enum: [
             "None", 
@@ -29,14 +29,16 @@ const spellSchema = new mongoose.Schema({
             "Untransfiguration", 
             "Binding Magical Contract", 
             "Vanishment",
-          ],
-          message: "{VALUE} is not a valid spell type!",
-          default: "None",
-          required: true,
+        ],
+        message: "{VALUE} is not a valid spell type!",
+        default: "None",
+        required: true,
     },
     light: String,
     creator: String,
 });
+
+spellSchema.index({ incantation: 1});
 
 const Spell = mongoose.model("Spell", spellSchema);
 
