@@ -23,14 +23,18 @@ const elixirSchema = new mongoose.Schema ({
         required: true,
 
     },
-    ingredients: [{ 
-        // id: String, 
-        name: String,
-        amount: Number }],
-    inventors: [ {
-        id: String,
-        firstName: String,
-        lastName: String}],
+    ingredients: String,
+    //  [{ 
+    //     // id: String, 
+    //     name: String,
+    //     amount: Number }],
+    // 
+    // 
+    inventors: String,
+        // [ {
+        // id: String,
+        // firstName: String,
+        // lastName: String}],
 
 });
 

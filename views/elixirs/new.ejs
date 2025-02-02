@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        New Elixir
+    </title>
+</head>
+
+<body>
+    <h1>New Elexir </h1>
+    <form action="/elixirs/" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+        <br>
+        <label for="effect">Effect: </label>
+        <input type="text" name="effect" id="effect" />
+        <br> 
+        <label for="sideEffects">Side effects: </label>
+        <input type="text" name="sideEffects" id="sideEffects"  />
+        <br>
+        <label for="characteristics">Characteristics: </label>
+        <input type="text" name="characteristics" id="characteristics" />
+        <br>
+        <label for="difficulty">Level of difficulty: </label>
+        <select name="difficulty" id="difficulty">            
+            <option value="Unknown">Unknown</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="One Of A Kind">One Of A Kind</option>
+            <option value="Ordinary Wizarding Level">Ordinary Wizarding Level</option>        
+        </select>
+        <label for="ingredients"> Ingredients: </label>
+        <input type="text" name="ingredients" id="ingredients" />
+        <br>
+        <label for="inventors">Elexir's Inventors: </label>
+        <input type="text" name="inventors" id="inventors"  />
+        <br>
+        <br>
+
+        <button type="submit">SAVE</button>
+    </form>  
+    
+    <br> <br>
+    <a href="/elixirs/">Back to Elexirs page</a>
+
+</body>
+
+</html>
